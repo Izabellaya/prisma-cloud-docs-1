@@ -59,6 +59,38 @@ For more information, reference the https://docs.paloaltonetworks.com/prisma/pri
 [.task]
 [#id0cd5f416-924c-4d62-8fad-67fb847dbdb1]
 === Grant permissions for Ingesting Google Workspace Groups
+The following permissions are required to be assigned to the Prisma Cloud service account on the ORG level (this is required only if the Viewer role is not provided to the service account used in onboarding):
+
+. cloudasset.assets.search.AllIamPolicies
++
+. cloudasset.assets.search.AllResources
+
+You must enable the following APIs:
+
+. Enable the “Cloud Asset API” in the project where the Prisma Cloud service account was created.
++
+.. Go to the project where the Prisma Cloud service account was created
++
+.. Search for Marketplace
++
+.. Search for “Cloud Asset API”
++
+.. Press on “Cloud Asset API”
++
+.. Enable API
++
+. Enable the “Cloud Identity API” in the project where the Prisma Cloud service account was created
++
+.. Go to the project where the Prisma Cloud service account was created
++
+.. Search for Marketplace
++
+.. Search for “Cloud Identity API”
++
+.. Press on “Cloud Identity API”
++
+.. Enable API
+
 
 You must have administrator access to Google Workspace (GSuite) to grant Prisma Cloud Service Accounts the permissions to ingest data from groups on Google Workspace (GSuite). The permissions required for ingesting data on groups is either the predefined role *Group Reader*, or a custom role with *groups:read* permission. Learn more about https://cloud.google.com/iam/docs/understanding-roles[Google IAM Roles].
 
